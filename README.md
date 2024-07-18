@@ -1,8 +1,4 @@
-Based on the contents of the provided Jupyter notebooks and the Python script, here's a README file for your project:
-
----
-
-# Raptor Training and Vector Database Project
+# RAPTOR RAG
 
 ## Overview
 
@@ -41,16 +37,20 @@ Open the `raptor-training.ipynb` notebook and execute the cells to train the Rap
 
 - Loading the dataset.
 - Preprocessing the data.
-- Training the model.
-- Evaluating its performance.
+- store text summaries in joblib format
 
 ### 2. Managing the Vector Database
 
 Once the model is trained, you can open the `vector_db.ipynb` notebook to:
 
-- Generate embeddings from the trained model.
-- Store the embeddings in a vector database.
+- Generate embeddings from the trained model (Gemini Embeddings).
+- Store the embeddings in a vector database (Milvus).
 - Query the database for similar items.
+- also for the vector db we set up a milvus docker image using following commands
+ ```bash
+   curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_embed.sh -o standalone_embed.sh
+   bash standalone_embed.sh start
+   ```
 
 ### 3. Running the Application
 
@@ -70,9 +70,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-- [Raptor Model](https://example.com) - For the machine learning architecture.
-- [Vector Database](https://example.com) - For enabling fast retrieval of embeddings.
-
----
-
-Feel free to modify the content as needed, especially the links and any additional information you would like to include!
+- [Raptor Model](https://arxiv.org/pdf/2401.18059) - For the machine learning architecture.
+- [Vector Database]([https://example.com](https://milvus.io/docs/install_standalone-docker.md)) - For enabling fast retrieval of embeddings.
