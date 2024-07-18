@@ -20,7 +20,7 @@ def give_context(question,collection_name,milvus_client):
         data=[
             GoogleGenerativeAIEmbeddings(model="models/text-embedding-004").embed_query(question)
         ],  # Use the `emb_text` function to convert the question to an embedding vector
-        limit=3,  # Return top 3 results
+        limit=5,  # Return top 3 results
         search_params={"metric_type": "IP", "params": {}},  # Inner product distance
         output_fields=["text"],  # Return the text field
     )
